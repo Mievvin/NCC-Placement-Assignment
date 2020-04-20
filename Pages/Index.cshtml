@@ -3,8 +3,42 @@
 @{
     ViewData["Title"] = "Home page";
 }
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<body>
+    <input type="button" value="Load Json Result" id="btn" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btn").click(function () {
+                var pageUrl = "https://api.nhs.uk/conditions/acne";
+                var subscriptionkey = "a76e7e0f594f4457bbcfaf981eb295be";
+                $.ajax({
+                    type: 'GET',
+                    url: pageUrl,
+                    headers:
+                    {
+                        'subscription-key': subscriptionkey,
+                        'Content-Type':'application/json'
+                    },
+                    dataType: 'json',
+                    success: function (data)
+                    {
+                        $('#jsonresult').append(data.hasPart[1].text)//This bit displays it upon button press
+                        //console.log(data.hasPart[0].name)
+                    }
+                });
+            });
+        });
+    </script>
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>
+
+    <div id="jsonresult">
+
+    </div>
+</body>
