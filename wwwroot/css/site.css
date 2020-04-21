@@ -71,7 +71,46 @@ body {
     float: none;
 }
 
+/* MY CSS */
+
 #nhsimage {
     float: right;
     width: 25%;
+}
+
+.navbar-nav {
+    justify-content: flex-end;
+}
+
+.navbar {
+    background: #005EB8 !important;
+}
+
+.navbar .navbar-text {
+    color: #FFFFFF !important;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+.jsonresult {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+.jsonresult img {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+#inputbutton {
+    margin: 0 auto;
+    display: block;
 }
