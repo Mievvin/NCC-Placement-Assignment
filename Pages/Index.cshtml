@@ -8,33 +8,35 @@
 </head>
 
 <body>
-     <h1>
-         Welcome to the Conditions Web App
-     </h1>
+    <h1>
+        Welcome to the Conditions Web App
+    </h1>
     <h2>
         Please enter a condition below and press Submit to learn about its symptoms!
     </h2>
 
-    <input type="button" value="Load Json Result" id="inputbutton" />
-
+    <input id="userinput"/>
+    <input type="button" value="Submit" id="inputbutton" />
 
     <script type="text/javascript">
         $(document).ready(function () {
             $("#inputbutton").click(function () {
-                var pageUrl = "https://api.nhs.uk/conditions/acne";
+                var userInput = document.getElementById("userinput").value;
+                var pageUrl = "https://api.nhs.uk/conditions/";
+                var pageURLComplete = pageUrl.concat(userInput);
                 var subscriptionkey = "a76e7e0f594f4457bbcfaf981eb295be";
                 $.ajax({
                     type: 'GET',
-                    url: pageUrl,
+                    url: pageURLComplete,
                     headers:
                     {
                         'subscription-key': subscriptionkey,
-                        'Content-Type':'application/json'
+                        'Content-Type': 'application/json'
                     },
                     dataType: 'json',
-                    success: function (data)
-                    {
+                    success: function (data) {
                         $('.jsonresult').append(data.hasPart[1].text)//This bit displays it upon button press
+                        //console.log(data);
                     }
                 });
             });

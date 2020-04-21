@@ -114,3 +114,8 @@ h2 {
     margin: 0 auto;
     display: block;
 }
+
+#userinput {
+    display: block;
+    margin: 0 auto;
+}
