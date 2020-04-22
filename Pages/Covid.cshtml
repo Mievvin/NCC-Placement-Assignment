@@ -1,8 +1,39 @@
 ﻿@page
 @model NHSWebApp.Pages.CovidModel
 @{
-    ViewData["Title"] = "Covid";
+    ViewData["Title"] = "COVID-19";
 }
+    <head>
+        <link rel="stylesheet" href="~/css/site.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    </head>
+<h1>Coronavirus/COVID-19</h1>
 
-<h1>Covid</h1>
+<script type="text/javascript">
+    $(function () {
+        var pageUrl = "https://api.nhs.uk/conditions/coronavirus-covid-19?url=NHSWebApp&modules=true";
+        $.ajax({
+            type: 'GET',
+            url: pageUrl,
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            dataType: 'json',
+            success: function (data) {
+                $('.covidsymptoms').append(data.modules[0].text)
+                $('.covidtreatment').append(data.modules[2].text)
+                //console.log(data)
+            }
+        });
+    });
+</script>
 
+
+<h2>What are the symptoms of COVID-19?</h2>
+
+<div class="covidsymptoms"></div>
+
+<br/><br/>
+<h2>How to treat COVID-19?</h2>
+
+<div class="covidtreatment"></div>

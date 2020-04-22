@@ -53,23 +53,27 @@ button.accept-policy {
 
 /* Sticky footer styles
 -------------------------------------------------- */
+
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
+
+
 .footer {
+
     position: absolute;
     bottom: 0;
     width: 100%;
     white-space: nowrap;
-    line-height: 60px; /* Vertically center the text there */
+    line-height: 60px;
     float: none;
 }
+
 
 /* MY CSS */
 
@@ -100,15 +104,15 @@ h2 {
 
 .jsonresult {
     width: 500px;
-    height: 500px;
     margin: 0 auto;
 }
 
-.jsonresult img {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto;
-}
+    .jsonresult img {
+        width: 100px;
+        height: 100px;
+        display: block;
+        margin: 0 auto;
+    }
 
 #inputbutton {
     margin: 0 auto;
@@ -118,4 +122,22 @@ h2 {
 #userinput {
     display: block;
     margin: 0 auto;
+}
+
+.covidsymptoms {
+    text-align: center;
+    list-style-position: inside;
+    background-color: #DCDCDC;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: rgba(0,0,0,0.1);
+}
+
+.covidtreatment {
+    text-align: center;
+    list-style-position: inside;
+    background-color: #DCDCDC;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: rgba(0,0,0,0.1);
 }
