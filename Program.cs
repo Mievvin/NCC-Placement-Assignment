@@ -6,9 +6,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using RestSharp;
 
-namespace NHSWebApp
+namespace NCCWebApp
 {
     public class Program
     {
@@ -23,6 +22,5 @@ namespace NHSWebApp
                 {
                     webBuilder.UseStartup<Startup>();
                 });
-
     }
 }

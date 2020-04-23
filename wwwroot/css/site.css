@@ -78,11 +78,6 @@ body {
     float: right;
     width: 25%;
 }
-
-.navbar-nav {
-    justify-content: flex-end;
-}
-
 .navbar {
     background: #005EB8 !important;
 }
@@ -111,7 +106,8 @@ h2 {
         margin: 0 auto;
     }
 
-#inputbutton {
+#inputbutton,
+#resetbutton {
     margin: 0 auto;
     display: block;
 }
