@@ -8,6 +8,6 @@
 @inject UserManager<ApplicationUser> UserManager
 
 <h1>@ViewData["Title"]</h1>
-<h2>
+<h3>
     Your Condition: @UserManager.FindByNameAsync(UserManager.GetUserName(User)).Result.Condition
-</h2>
+</h3>
