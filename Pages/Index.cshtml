@@ -16,10 +16,11 @@
     </h2>
 
     <input id="userinput" />
-    <input type="button" value="Submit" id="inputbutton"/>
-    <br/>
-    <input type="button" value="Reset Content" id="resetbutton"/>
-    <br/>
+    <!-- <input type="button" value="Submit" id="inputbutton" />-->
+    <button id="inputbutton">Submit</button>
+    <br />
+    <input type="button" value="Reset Content" id="resetbutton" />
+    <br />
     <script type="text/javascript">
         $(document).ready(function () {
             $("#inputbutton").click(function () {
@@ -38,7 +39,7 @@
                     dataType: 'json',
                     success: function (data) {
                         $('.jsonresult').append(data.hasPart[1].text)//This bit displays it upon button press
-                        //console.log(data);
+                        console.log(data);
                     }
                 });
             });
