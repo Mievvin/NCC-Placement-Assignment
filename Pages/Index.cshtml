@@ -8,46 +8,49 @@
 </head>
 
 <body>
-    <h1>
-        Welcome to the Conditions Web App
-    </h1>
-    <h2>
-        Please enter a condition below and press Submit to learn about its symptoms!
-    </h2>
+    <div class="indextextwrapper">
+        <h1>
+            Welcome to the Conditions Web App
+        </h1>
+        <h2>
+            Enter a condition below and press Submit to learn about its symptoms!
+        </h2>
+    </div>
+    <br/>
+        <input id="userinput" />
+        <button id="inputbutton" type="submit" class="btn btn-primary">Submit</button>
+        <br />
+        <button id="resetbutton" type="reset" class="btn btn-primary">Reset Content</button>
+        <br />
+        <div class="jsonresult"></div>
+</body>
 
-    <input id="userinput" />
-    <!-- <input type="button" value="Submit" id="inputbutton" />-->
-    <button id="inputbutton">Submit</button>
-    <br />
-    <input type="button" value="Reset Content" id="resetbutton" />
-    <br />
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("#inputbutton").click(function () {
-                var userInput = document.getElementById("userinput").value;
-                var pageUrl = "https://api.nhs.uk/conditions/";
-                var pageURLComplete = pageUrl.concat(userInput);
-                var subscriptionkey = "a76e7e0f594f4457bbcfaf981eb295be";
-                $.ajax({
-                    type: 'GET',
-                    url: pageURLComplete,
-                    headers:
-                    {
-                        'subscription-key': subscriptionkey,
-                        'Content-Type': 'application/json'
-                    },
-                    dataType: 'json',
-                    success: function (data) {
-                        $('.jsonresult').append(data.hasPart[1].text)//This bit displays it upon button press
-                        console.log(data);
-                    }
-                });
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#inputbutton").click(function () {
+            var userInput = document.getElementById("userinput").value;
+            var pageUrl = "https://api.nhs.uk/conditions/";
+            var pageURLComplete = pageUrl.concat(userInput);
+            var subscriptionkey = "a76e7e0f594f4457bbcfaf981eb295be";
+            $.ajax({
+                type: 'GET',
+                url: pageURLComplete,
+                headers:
+                {
+                    'subscription-key': subscriptionkey,
+                    'Content-Type': 'application/json'
+                },
+                dataType: 'json',
+                success: function (data) {
+                    $('.jsonresult').append(data.hasPart[1].text)//This bit displays it upon button press
+                    console.log(data);
+                }
             });
         });
+    });
 
-        $("#resetbutton").click(function () {
-            $(".jsonresult").empty();
-        });
-    </script>
-    <div class="jsonresult"></div>
-</body>
+    $("#resetbutton").click(function () {
+        $(".jsonresult").empty();
+    });
+</script>
