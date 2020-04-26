@@ -9,8 +9,8 @@
         <script src="~/js/site.js"></script>
     </head>
 <h1 id="covidtitle">Coronavirus/COVID-19</h1>
-<script type="text/javascript">
-    $(function () {
+<script type="text/javascript"> // Calls the API using jQuery
+    $(function () { 
         var pageUrl = "https://api.nhs.uk/conditions/coronavirus-covid-19?url=NHSWebApp&modules=false";
         $.ajax({
             type: 'GET',
@@ -20,12 +20,11 @@
             },
             dataType: 'json',
             success: function (data) {
-                $('.covidsymptoms').append(data.hasPart[0].text)
-                $('.covidtreatment').append(data.hasPart[2].text)
-                var covidate = data.dateModified;
-                var newDate = new Date(covidate);
-                $('.lastupdated').append(newDate)
-                console.log(data);
+                $('.covidsymptoms').append(data.hasPart[0].text) //Retrieves symptoms text & appends to a div
+                $('.covidtreatment').append(data.hasPart[2].text) //Retrieves treatment text & appends to a div
+                var covidate = data.dateModified; //Retrieves the date modified
+                var newDate = new Date(covidate); //Formats the date from a JSON format
+                $('.lastupdated').append(newDate) //Appends date to a div
             }
         });
     });

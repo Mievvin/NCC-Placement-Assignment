@@ -83,7 +83,7 @@ namespace NHSWebApp.Pages
             }
             if (ModelState.IsValid)
             {
-                var pageURL = "https://api.nhs.uk/conditions/";
+                var pageURL = "https://api.nhs.uk/conditions/"; //Calls the API to receive treatment information about the condition the user input during registration
                 var finalPageURL = String.Concat(pageURL, user.Condition);
                 var subscriptionKey = "58ceba1b9c0749ab823ab64db4676835";
 
@@ -97,14 +97,14 @@ namespace NHSWebApp.Pages
 
                 RootObject obj = new JavaScriptSerializer().Deserialize<RootObject>(content);
                 var symptomstext = "";
-                foreach (var item in obj.hasPart)
+                foreach (var item in obj.hasPart) //Iterates through the parts of the JSON response to find the correct one
                 {
                     if (item.name== "self_care")
                     {
                         symptomstext = item.text;
                     }
                 }
-
+                //Section below sets up the email with the information from above 
                 var body = $@"Hello {user.Email} ! Please see below to see the prescription regarding {user.Condition} .<br/>
                 {symptomstext}";
                 using (var smtp = new SmtpClient())

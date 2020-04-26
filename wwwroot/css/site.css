@@ -20,8 +20,6 @@ a {
     border-color: #1861ac;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
 html {
     overflow-y: scroll;
     font-size: 14px;
@@ -50,9 +48,6 @@ button.accept-policy {
     line-height: inherit;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-
 html {
     position: relative;
     min-height: 100%;
@@ -74,7 +69,7 @@ body {
 }
 
 
-/* MY CSS */
+
 
 #nhsimage {
     float: right;
@@ -125,8 +120,6 @@ h2 {
     font-family: Lato;
 }
 
-
-/* COVID-19 Page CSS - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 .covidsymptoms {
     text-align: center;
     list-style-position: inside;
@@ -167,7 +160,7 @@ h2 {
     font-family: Lato;
 }
 
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
 .indextextwrapper {
     background-color: #005EB8;
     border-radius: 5px;
@@ -177,7 +170,6 @@ h2 {
     font-family: Lato;
     color: white;
 }
-
 
 .nav-item,
 .navbar-brand {
@@ -201,7 +193,6 @@ h2 {
     padding-left: 41%;
 }
 
-
 #loginrow .form-group {
     font-family: Lato;
 }
@@ -221,7 +212,6 @@ h2 {
 #registerrow {
     padding-left: 41%;
 }
-
 
 #profile-form,
 #profileindex {

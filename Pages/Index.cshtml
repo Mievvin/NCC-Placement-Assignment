@@ -30,13 +30,12 @@
     <div class="jsonresult" id="symptomscontent"></div>
 </body>
 
-
 <script type="text/javascript">
-    $(document).ready(function () {
+    $(document).ready(function () { //Calls API using jQuery
         $("#inputbutton").click(function () {
             var name = $.trim($('#userinput').val());
             if (name === '') {
-                alert('Text field is empty');
+                alert('Text field is empty'); //Validation for if the input field is empty
                 return false;
             }
             else
@@ -55,8 +54,7 @@
                 },
                 dataType: 'json',
                 success: function (data) {
-                    $('.jsonresult').append(data.hasPart[1].text)//This bit displays it upon button press
-                    console.log(data);
+                    $('.jsonresult').append(data.hasPart[1].text)
                 }
             });
            }
