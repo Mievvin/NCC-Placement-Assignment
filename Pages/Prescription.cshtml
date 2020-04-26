@@ -13,24 +13,26 @@
     var email = usr?.Email;
 }
 
+<div class="emailheader">
 <h1>@ViewData["Title"]</h1>
-<h2>On this page you are able to send an email prescription for the condition provided during registration.</h2>
-<h3>Your Condition: @UserManager.FindByNameAsync(UserManager.GetUserName(User)).Result.Condition</h3>
-<body>
-    @{
-        var user = ViewData["ApplicationUser"] as NCCWebApp.Models.ApplicationUser;
-    }
-</body>
-
-<div class="row">
-    <div class="col-md-6">
-        <form id="profile-form" method="post">
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="OrderEmail"></label>
-                <input asp-for="OrderEmail" />
-            </div>
-            <button id="update-profile-button" type="submit" class="btn btn-primary">Send Email</button>
-        </form>
-    </div>
+<h2>Send treatment information about your condition straight to your email!</h2>
+<h3 style="text-align: center">Your Condition: @UserManager.FindByNameAsync(UserManager.GetUserName(User)).Result.Condition</h3>
 </div>
+
+<body>
+    <div style="text-align: center" class="emailwrapper">
+        <div class="row" id="emailrow">
+            <div class="col-md-6">
+                    <form id="treatment-form" method="post">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="OrderEmail"></label>
+                            <br />
+                            <input asp-for="OrderEmail" />
+                        </div>
+                        <button id="update-profile-button" type="submit" class="btn btn-primary">Send Email</button>
+                    </form>
+            </div>
+        </div>
+    </div>
+</body>

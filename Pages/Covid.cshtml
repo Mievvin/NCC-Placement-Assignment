@@ -3,11 +3,11 @@
 @{
     ViewData["Title"] = "COVID-19";
 }
-<head>
-    <link rel="stylesheet" href="~/css/site.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-</head>
-
+    <head>
+        <link rel="stylesheet" href="~/css/site.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="~/js/site.js"></script>
+    </head>
 <h1 id="covidtitle">Coronavirus/COVID-19</h1>
 <script type="text/javascript">
     $(function () {
@@ -33,11 +33,13 @@
 
 <body>
     <h2 id="cv19symptomshead">What are the symptoms of COVID-19?</h2>
-    <div class="covidsymptoms"></div>
+    <div class="covidsymptoms" id="symptomscontent"></div>
     <br />
     <br />
     <h2 id="cv19treathead">How to treat COVID-19?</h2>
-    <div class="covidtreatment"></div>
+    <div class="covidtreatment" id="covidtreatment"></div>
     <div class="lastupdated"></div>
+    <button id="increasefont" onclick="increaseFont()" class="btn btn-primary">Increase font size</button>
+    <button id="decreasefont" onclick="restoreFontSize()" class="btn btn-primary">Original font size</button>
     <h7 id="lastupdatedtext">Information Last Updated: </h7>
 </body>

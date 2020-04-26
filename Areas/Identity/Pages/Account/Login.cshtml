@@ -5,13 +5,17 @@
     ViewData["Title"] = "Log in";
 }
 
-<h1>@ViewData["Title"]</h1>
-<div class="loginWrapper">
-    <div class="row">
+    <head>
+        <link rel="stylesheet" href="~/css/site.css" />
+    </head>
+
+<h1 id="loginheader">@ViewData["Title"]</h1>
+<div style="text-align: center" class="loginWrapper">
+    <div class="row" id="loginrow">
         <div class="col-md-4">
             <section>
                 <form id="account" method="post">
-                    <h4>Use a local account to log in</h4>
+                    <h4 id="loginheader">Use a local account to log in</h4>
                     <hr />
                     <div asp-validation-summary="All" class="text-danger"></div>
                     <div class="form-group">
@@ -40,7 +44,7 @@
                             <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
                         </p>
                         <p>
-                            <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">No account? Register here!</a>
+                            <a id="redirect-register" asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">No account? Register here!</a>
                         </p>
                     </div>
                 </form>

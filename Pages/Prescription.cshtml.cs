@@ -31,7 +31,7 @@ namespace NHSWebApp.Pages
             _userManager = userManager;
         }
 
-        [BindProperty, EmailAddress, Required, Display(Name = "Your Email Address")]
+        [BindProperty, EmailAddress, Required, Display(Name = "Email Address")]
         public string OrderEmail { get; set; }
 
         private async Task LoadAsync(ApplicationUser user)
