@@ -99,6 +99,7 @@ h2 {
     width: 500px;
     margin: 0 auto;
     min-height: 50px;
+    font-family: Lato;
 }
 
 .jsonresult img {
@@ -131,6 +132,7 @@ h2 {
     border-style: solid;
     border-color: rgba(0,0,0,0);
     box-shadow: 1px 1px 7px grey;
+
 }
 
 .covidtreatment {
@@ -160,15 +162,22 @@ h2 {
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 .indextextwrapper {
-    background-color: #E5E5E5;
+    background-color: #005EB8;
     border-radius: 5px;
     border-style: solid;
     border-color: rgba(0,94,184,0);
     box-shadow: 1px 1px 7px grey;
     font-family: Lato;
+    color: white;
 }
+
 
 .nav-item,
 .navbar-brand {
     font-family: Lato;
+}
+
+#increasefont, 
+#decreasefont {
+    margin-top: 10px;
 }

@@ -5,7 +5,9 @@
 }
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="~/js/site.js"></script>
 </head>
+
 
 <body>
     <div class="indextextwrapper">
@@ -16,13 +18,16 @@
             Enter a condition below and press Submit to learn about its symptoms!
         </h2>
     </div>
+    <button id="increasefont" onclick="increaseFont()" class="btn btn-primary">Increase font size</button>
+    <button id="decreasefont" onclick="restoreFontSize()" class="btn btn-primary">Original font size</button>
     <br/>
         <input id="userinput" />
+    <br/>
         <button id="inputbutton" type="submit" class="btn btn-primary">Submit</button>
         <br />
         <button id="resetbutton" type="reset" class="btn btn-primary">Reset Content</button>
         <br />
-        <div class="jsonresult"></div>
+        <div class="jsonresult" id="symptomscontent"></div>
 </body>
 
 
@@ -32,7 +37,7 @@
             var userInput = document.getElementById("userinput").value;
             var pageUrl = "https://api.nhs.uk/conditions/";
             var pageURLComplete = pageUrl.concat(userInput);
-            var subscriptionkey = "a76e7e0f594f4457bbcfaf981eb295be";
+            var subscriptionkey = "58ceba1b9c0749ab823ab64db4676835";
             $.ajax({
                 type: 'GET',
                 url: pageURLComplete,
