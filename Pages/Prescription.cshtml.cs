@@ -85,7 +85,7 @@ namespace NHSWebApp.Pages
             {
                 var pageURL = "https://api.nhs.uk/conditions/"; //Calls the API to receive treatment information about the condition the user input during registration
                 var finalPageURL = String.Concat(pageURL, user.Condition);
-                var subscriptionKey = "58ceba1b9c0749ab823ab64db4676835";
+                var subscriptionKey = "5b76a9079d1147d498a9452bf1a1ad95";
 
                 var client = new RestClient(finalPageURL);
                 var request = new RestRequest();
