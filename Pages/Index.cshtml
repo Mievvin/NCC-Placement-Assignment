@@ -20,20 +20,27 @@
     </div>
     <button id="increasefont" onclick="increaseFont()" class="btn btn-primary">Increase font size</button>
     <button id="decreasefont" onclick="restoreFontSize()" class="btn btn-primary">Original font size</button>
-    <br/>
-        <input id="userinput" />
-    <br/>
-        <button id="inputbutton" type="submit" class="btn btn-primary">Submit</button>
-        <br />
-        <button id="resetbutton" type="reset" class="btn btn-primary">Reset Content</button>
-        <br />
-        <div class="jsonresult" id="symptomscontent"></div>
+    <br />
+    <input id="userinput" />
+    <br />
+    <button id="inputbutton" type="submit" class="btn btn-primary" >Submit</button>
+    <br />
+    <button id="resetbutton" type="reset" class="btn btn-primary">Reset Content</button>
+    <br />
+    <div class="jsonresult" id="symptomscontent"></div>
 </body>
 
 
 <script type="text/javascript">
     $(document).ready(function () {
         $("#inputbutton").click(function () {
+            var name = $.trim($('#userinput').val());
+            if (name === '') {
+                alert('Text field is empty');
+                return false;
+            }
+            else
+            {
             var userInput = document.getElementById("userinput").value;
             var pageUrl = "https://api.nhs.uk/conditions/";
             var pageURLComplete = pageUrl.concat(userInput);
@@ -52,6 +59,7 @@
                     console.log(data);
                 }
             });
+           }
         });
     });
 

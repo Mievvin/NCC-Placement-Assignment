@@ -23,6 +23,7 @@ a {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
+    overflow-y: scroll;
     font-size: 14px;
 }
 
