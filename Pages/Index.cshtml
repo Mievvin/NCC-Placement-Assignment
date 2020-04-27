@@ -43,7 +43,7 @@
             var userInput = document.getElementById("userinput").value;
             var pageUrl = "https://api.nhs.uk/conditions/";
             var pageURLComplete = pageUrl.concat(userInput);
-            var subscriptionkey = "5b76a9079d1147d498a9452bf1a1ad95";
+            var subscriptionkey = "";
             $.ajax({
                 type: 'GET',
                 url: pageURLComplete,
